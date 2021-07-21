@@ -106,12 +106,14 @@
                                         <p class="text-danger">${param.errortotalprice}</p>
                                     </div>
                                 </spring:bind>
+                                <spring:bind path="products">
                                 <div class="form-group col-md-6">
                                     <label>Product</label>
-                                    <f:select class="custom-select" path="products" multiple="true">
+                                    <f:select class="custom-select" path="products">
                                         <f:options items="${products}" itemLabel="productName" itemValue="productID"/>
                                     </f:select>
                                 </div>
+                                </spring:bind>
                             </div>
                         </div>
                             <%--                        <div class="col-md-12">--%>

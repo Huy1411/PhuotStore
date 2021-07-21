@@ -1,11 +1,9 @@
 package com.example.phuotstore.model;
 
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.HashSet;
@@ -22,8 +20,6 @@ public class Order {
     @NotNull(message = "Order Name must not be null")
     private String orderName;
 
-    private String note;
-
     @CreationTimestamp
     private Date createAt;
 
@@ -36,6 +32,14 @@ public class Order {
     private int totalQuantity;
 
     private double totalPrice;
+
+    private String note;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String shippingAddress;
+    private String phone;
+    private String paymentType;
 
     @ManyToOne
     @JoinColumn(name = "userID", referencedColumnName = "userID")
@@ -56,12 +60,18 @@ public class Order {
     public Order() {
     }
 
-    public Order(String orderName, String note, String status, int totalQuantity, double totalPrice) {
+    public Order(String orderName, String note, String status, int totalQuantity, double totalPrice, String firstName, String lastName, String email, String shippingAddress, String phone, String paymentType) {
         this.orderName = orderName;
         this.note = note;
         this.status = status;
         this.totalQuantity = totalQuantity;
         this.totalPrice = totalPrice;
+        this.firstName= firstName;
+        this.lastName= lastName;
+        this.email= email;
+        this.shippingAddress = shippingAddress;
+        this.phone = phone;
+        this.paymentType = paymentType;
     }
 
     public int getOrderID() {
@@ -150,5 +160,61 @@ public class Order {
 
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public int getTotalQuantity() {
+        return totalQuantity;
+    }
+
+    public void setTotalQuantity(int totalQuantity) {
+        this.totalQuantity = totalQuantity;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
     }
 }

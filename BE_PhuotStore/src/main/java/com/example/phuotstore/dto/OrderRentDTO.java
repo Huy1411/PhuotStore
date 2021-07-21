@@ -2,7 +2,6 @@ package com.example.phuotstore.dto;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.Set;
@@ -31,7 +30,15 @@ public class OrderRentDTO {
     @CreationTimestamp
     private Date rentalEnd;
 
-    private Set<Integer> user;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String shippingAddress;
+    private String phone;
+    private String paymentType;
+
+
+    private Integer userID;
 
     private Set<Integer> product;
 
@@ -85,12 +92,12 @@ public class OrderRentDTO {
         this.rental = rental;
     }
 
-    public Set<Integer> getUser() {
-        return user;
+    public Integer getUserID() {
+        return userID;
     }
 
-    public void setUser(Set<Integer> user) {
-        this.user = user;
+    public void setUserID(Integer userID) {
+        this.userID = userID;
     }
 
     public Set<Integer> getProduct() {
@@ -131,5 +138,53 @@ public class OrderRentDTO {
 
     public void setBookingDate(Date bookingDate) {
         this.bookingDate = bookingDate;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
     }
 }

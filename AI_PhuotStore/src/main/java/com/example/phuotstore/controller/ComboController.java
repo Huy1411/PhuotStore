@@ -54,6 +54,7 @@ public class ComboController {
 
     @RequestMapping("/insertCombo")
     public String insertCombo(Model model) {
+
         Combo combo = new Combo();
         List<Product> products = productService.getProductsByStatus(1);
         model.addAttribute("newCombo", combo);

@@ -56,17 +56,17 @@ public class ComboServiceImpl implements ComboService {
     @Override
     public boolean saveCombo(Combo combo) {
         try {
-            Set<Product> products = new HashSet<>();
-            if (products == null) {
-                return false;
-            } else {
-                products.forEach((product) -> {
-                    products.add(product);
-                });
-                combo.setProducts(products);
+//            Set<Product> products = new HashSet<>();
+//            if (products == null) {
+//                return false;
+//            } else {
+//                products.forEach((product) -> {
+//                    products.add(product);
+//                });
+//                combo.setProducts(products);
                 comboRepository.save(combo);
                 return true;
-            }
+//            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -76,17 +76,17 @@ public class ComboServiceImpl implements ComboService {
     @Override
     public boolean updateCombo(Combo combo) {
         try {
-            Set<Product> products = new HashSet<>();
-            if (products == null) {
-                return false;
-            } else {
-                products.forEach((product) -> {
-                    products.add(product);
-                });
-                combo.setProducts(products);
+//            Set<Product> products = new HashSet<>();
+//            if (products == null) {
+//                return false;
+//            } else {
+//                products.forEach((product) -> {
+//                    products.add(product);
+//                });
+//                combo.setProducts(products);
                 comboRepository.save(combo);
                 return true;
-            }
+//            }
         } catch (Exception e) {
             e.printStackTrace();
         }

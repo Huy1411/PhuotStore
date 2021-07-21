@@ -1,10 +1,6 @@
 package com.example.phuotstore.dto;
 
-import org.hibernate.annotations.CreationTimestamp;
-
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 import java.util.Set;
 
 public class OrderDTO {
@@ -20,6 +16,14 @@ public class OrderDTO {
     private int totalQuantity;
 
     private double totalPrice;
+
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String shippingAddress;
+    private String phone;
+    private String paymentType;
+
 
     private Integer userID;
 
@@ -89,5 +93,53 @@ public class OrderDTO {
 
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
     }
 }

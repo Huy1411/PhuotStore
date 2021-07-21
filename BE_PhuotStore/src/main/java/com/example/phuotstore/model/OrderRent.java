@@ -1,10 +1,8 @@
 package com.example.phuotstore.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.HashSet;
@@ -45,6 +43,14 @@ public class OrderRent {
 
     private double rental;
 
+    private String paymentType;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String shippingAddress;
+    private String phone;
+
+
     @ManyToOne
     @NotNull
     @JoinColumn(name = "userID", referencedColumnName = "userID")
@@ -65,15 +71,22 @@ public class OrderRent {
     public OrderRent() {
     }
 
-    public OrderRent(@NotNull String orderRentName, String note, Date bookingDate, Date rentalStart, Date rentalEnd, String status,int totalQuantity, double totalPrice) {
+    public OrderRent(@NotNull String orderRentName, String note, String status,int totalQuantity, double totalPrice, double rental, Date bookingDate, Date rentalStart, Date rentalEnd,  String firstName, String lastName, String email, String shippingAddress, String phone, String paymentType) {
         this.orderRentName = orderRentName;
         this.note = note;
+        this.rental = rental;
         this.bookingDate = bookingDate;
         this.rentalStart = rentalStart;
         this.rentalEnd = rentalEnd;
         this.status = status;
         this.totalQuantity = totalQuantity;
         this.totalPrice = totalPrice;
+        this.firstName= firstName;
+        this.lastName= lastName;
+        this.email= email;
+        this.shippingAddress = shippingAddress;
+        this.phone = phone;
+        this.paymentType = paymentType;
     }
 
     public int getOrderRentID() {
@@ -194,5 +207,53 @@ public class OrderRent {
 
     public void setCombos(Set<Combo> combos) {
         this.combos = combos;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
     }
 }

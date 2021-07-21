@@ -28,15 +28,15 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @Autowired
-    private CategoryService categoryService;
+        @Autowired
+        private CategoryService categoryService;
 
-    @Autowired
-    private BrandService brandService;
+        @Autowired
+        private BrandService brandService;
 
 
-    @InitBinder
-    public void InitBinder(WebDataBinder data) {
+        @InitBinder
+        public void InitBinder(WebDataBinder data) {
         SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
         data.registerCustomEditor(Date.class, new CustomDateEditor(s, true));
     }
@@ -110,7 +110,7 @@ public class ProductController {
     public String updateProduct(@ModelAttribute("editProduct") Product product) {
         boolean checkProductName = checkProductName(product.getProductName(), product.getProductID(), product.getBrand().getBrandID(), product.getCategory().getCategoryID());
         if (checkProductName == false) {
-            return "redirect:/admin/product/editProduct?productID=" + product.getProductID() + "&&errorproductname=Product Name is existed";
+            return "redirect:/admin/product/editProduct?id=" + product.getProductID() + "&&errorproductname=Product Name is existed";
         }
         boolean bl = productService.updateProduct(product);
         if (bl) {
