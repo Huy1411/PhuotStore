@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("flaticonf6cf.ttf?cd9ad82fe613e92865deb0a6447f4016") format("truetype"),
+url("flaticonf6cf.woff?cd9ad82fe613e92865deb0a6447f4016") format("woff"),
+url("flaticonf6cf.woff2?cd9ad82fe613e92865deb0a6447f4016") format("woff2"),
+url("flaticonf6cf.eot?cd9ad82fe613e92865deb0a6447f4016#iefix") format("embedded-opentype"),
+url("flaticonf6cf.svg?cd9ad82fe613e92865deb0a6447f4016#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, 
+i[class*=" flaticon-"]:before,
+span[class^="flaticon-"]:before, 
+span[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-phone-call:before {
+    content: "\f101";
+}
+.flaticon-mail:before {
+    content: "\f102";
+}
+.flaticon-location:before {
+    content: "\f103";
+}
+.flaticon-camping-tent:before {
+    content: "\f104";
+}
+.flaticon-bonfire:before {
+    content: "\f105";
+}
+.flaticon-park:before {
+    content: "\f106";
+}
+.flaticon-picnic:before {
+    content: "\f107";
+}
+.flaticon-caravan:before {
+    content: "\f108";
+}
+.flaticon-lake:before {
+    content: "\f109";
+}
+.flaticon-kayak:before {
+    content: "\f10a";
+}
+.flaticon-tour:before {
+    content: "\f10b";
+}
+.flaticon-bag:before {
+    content: "\f10c";
+}
+.flaticon-wood-house:before {
+    content: "\f10d";
+}
+.flaticon-activities:before {
+    content: "\f10e";
+}
+.flaticon-tent:before {
+    content: "\f10f";
+}
+.flaticon-hot-air-balloon:before {
+    content: "\f110";
+}
+.flaticon-camping:before {
+    content: "\f111";
+}
+.flaticon-award:before {
+    content: "\f112";
+}
+.flaticon-rating:before {
+    content: "\f113";
+}
+.flaticon-team:before {
+    content: "\f114";
+}
