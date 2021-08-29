@@ -133,6 +133,10 @@ public class OrderRentAPI {
         if (!optionalOrderRent.isPresent()) {
             return ResponseEntity.unprocessableEntity().build();
         }
+        Optional<User> optionalUser = userRepository.findUserByID(orderRentDTO.getUserID());
+        if (!optionalUser.isPresent()) {
+            return ResponseEntity.unprocessableEntity().build();
+        }
 
         OrderRent orderRent = new OrderRent(orderRentDTO.getOrderRentName(), orderRentDTO.getNote(), orderRentDTO.getStatus(), orderRentDTO.getTotalQuantity(), orderRentDTO.getTotalPrice(), orderRentDTO.getRental(), orderRentDTO.getBookingDate(), orderRentDTO.getRentalStart(), orderRentDTO.getRentalEnd(), orderRentDTO.getFirstName(), orderRentDTO.getLastName(), orderRentDTO.getEmail(), orderRentDTO.getShippingAddress(), orderRentDTO.getPhone(), orderRentDTO.getPaymentType());
 
@@ -159,6 +163,7 @@ public class OrderRentAPI {
             orderRent.setCombos(combos);
             orderRent.setUpdateAt(new Date());
             orderRent.setOrderRentID(optionalOrderRent.get().getOrderRentID());
+            orderRent.setUser(optionalUser.get());
             orderRentRepository.save(orderRent);
             return ResponseEntity.ok(optionalOrderRent.get());
         }

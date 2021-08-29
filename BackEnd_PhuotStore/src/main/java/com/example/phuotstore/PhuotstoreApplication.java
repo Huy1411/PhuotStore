@@ -2,12 +2,15 @@ package com.example.phuotstore;
 
 
 import com.example.phuotstore.model.Role;
+import com.example.phuotstore.model.User;
 import com.example.phuotstore.repository.RoleRepository;
+import com.example.phuotstore.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import springfox.documentation.builders.PathSelectors;
@@ -25,6 +28,12 @@ public class PhuotstoreApplication implements CommandLineRunner {
 
     @Autowired
     private RoleRepository roleRepository;
+
+    @Autowired
+    PasswordEncoder encoder;
+
+    @Autowired
+    private UserRepository userRepository;
 
 
     @Bean
@@ -66,5 +75,14 @@ public class PhuotstoreApplication implements CommandLineRunner {
         userRole.setRoleName("ROLE_USER");
 
         roleRepository.saveAll(Arrays.asList(adminRole, managerRole, userRole));
+
+        User userAdmin = new User("rootadmin",
+            "rootadmin@gmail.com",
+            encoder.encode("12345678"));
+
+        userAdmin.getRoles().add(adminRole);
+
+        userRepository.save(userAdmin);
+
     }
 }
